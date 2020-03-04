@@ -26,3 +26,6 @@ yarn-error.log*
 .cache
 
 dist
+
+#generated files
+/utils/generated
