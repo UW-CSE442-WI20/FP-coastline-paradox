@@ -1,7 +1,29 @@
 import React from 'react';
 import './index.css';
+import styled from "styled-components";
 
 import ExplanationBox from './ExplanationBox.js';
+
+import { Controller, Scene } from 'react-scrollmagic';
+
+const StickyStyled = styled.div`
+.section {
+  height: 100vh;
+}
+
+.sticky {
+  background-color: red;
+  width: 100%;
+  & div {
+    padding: 30px;
+  }
+}
+
+.blue {
+  background-color: blue;
+}
+`;
+
 
 const p1        = "It’s easy to measure the length of a straight line, but due to the fractal-like properties of coastlines, the length of a coastline depends on the method and scale of measurement used. As the unit of measurement decreases in scale, the length of a coastline increases towards infinity. This counterintuitive observation is called the coastline problem/paradox."
 const p2        = "Let’s measure the coastline of Great Britain with an epsilon value of 100. With an epsilon value of 100, we find that the length of Great Britain’s coastline is approximately 1558 pixels. But we can see that by using this length of measurement, we miss a lot of the edges and curves that exist on the coastline. In order to get a more accurate measurement of the coastline, we need to decrease the granularity of our measurement tool."
@@ -29,6 +51,14 @@ function Content() {
         <h2>Column 2</h2>
 
         <h1>MAPS GOES HERE</h1>
+
+        <StickyStyled>
+            <Controller>
+            <Scene duration={600} pin>
+                <div>Sticky Example</div>
+            </Scene>
+            </Controller>
+        </StickyStyled>
     </div>
     </div>
   );
