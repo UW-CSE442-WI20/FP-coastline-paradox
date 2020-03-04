@@ -12,7 +12,7 @@ Display a single approximation:
 Generate and save approximations based on step size (epsilon ranges from 0 to 100):
 *Warning: the program will generate int(round(100 / step_size)) number of pictures*
 1. run `python3 contour_approx.py -gen` to generate approximation images using default epsilon step size of 2.0
-2. run `python3 contour_approx.py -gen -s 1.5` to generate approximation images using default epsilon step size of 1.5
+2. run `python3 contour_approx.py -gen -s 1.5` to specify epsilon step size of 1.5, etc.
 
 images will be saved in "./generated" and images filenames contain the length data in the following format: "result_len_\[APPROXIMATE_LENGTH\]_epsilon\[EPSILON\]"
 e.g. "result_len_2782_epsilon_27d5.png" means approx length of 2782, using an epsilon of 27.5
