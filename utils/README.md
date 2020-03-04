@@ -1,7 +1,8 @@
 # coastline contour length approximation 
 
 **NOTE** we are using **python3**, and this project relies on **cv2** and **numpy**
-Make sure to install dependencies using `pip3 install -r requirements.txt`
+Make sure to install dependencies using 
+`pip3 install -r requirements.txt`
 
 Display a single approximation:
 1. run `python3 contour_approx.py` to approximate the length of great britain's coastline using default epsilon of 5.0
