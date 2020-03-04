@@ -6,6 +6,7 @@ import os
 es = [120, 125]
 
 IMG_PATH = "./great_britain.png" # we're only going to use this one source image of great britain
+# "true" length of this image is 4250.5162653923035
 
 def main(args):
     EPSILON = args.EPSILON # optional argument, defaults to 5.0
@@ -20,6 +21,10 @@ def main(args):
     ch = contours, hierarchy = cv2.findContours(threshold.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
 
     if GENERATE:
+        # generate once for target length of image
+        result_img, result_target_len, result_approx_len = generate_approx(img.copy(), contours, EPSILON)
+        print("target length ", result_target_len)
+
         WORKING_DIRECTORY = os.getcwd()
         print ("The current working directory is %s" % WORKING_DIRECTORY)
         export_path = WORKING_DIRECTORY + "/generated"
@@ -39,17 +44,13 @@ def main(args):
             image_name = "/result_len_" + str(int(round(result_approx_len))) + "_epsilon_" + str(e).replace(".","d") + ".png"
             file_path = export_path + image_name
             cv2.imwrite(file_path, result_img)
-
         print("done generating files")
-
     else:
         print("Approximating using epsilon =", str(EPSILON))
-
-        result_img, result_target_len, result_approx_len = generate_approx(img.copy(), contours, EPSILON)
-
         print("\napproximation length ", result_approx_len)
         print("target length ", result_target_len)
 
+        result_img, result_target_len, result_approx_len = generate_approx(img.copy(), contours, EPSILON)
         cv2.imshow("contour on img", result_img)
 
         print("\npress Q at any time to quit", result_target_len)
