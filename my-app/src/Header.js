@@ -3,13 +3,21 @@ import styled from "styled-components";
 
 import './index.css';
 
+// const BACKGROUND_URL = "https://media.giphy.com/media/7zJgqvSbjBH2M/giphy.gif";
+
 const title     = "The Coastline Paradox"
 const hook      = "Is it possible to measure a coastline’s true length?"
 
 const ScreenBox = styled.div`
-    // font-weight: bold;
-    margin: 5em;
-    padding: 10em 2em ;
+    padding-top: 12em;
+    padding-bottom: 17em;
+    padding-left: 7em;
+    background-image: url("./double-wave.gif");
+    background-color: #f6d7b0; // sand
+
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom left;
 `;
 
 const FirstTitle = styled.h1`
