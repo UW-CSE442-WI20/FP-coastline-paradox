@@ -36,6 +36,7 @@ const Row = styled.div`
 const Column = styled.div`
   flex: 50%;
 `
+
 const useStyles = makeStyles(theme => ({
   root: {
     width: 300 + theme.spacing(3) * 2,
@@ -112,7 +113,9 @@ const IOSSlider = withStyles({
   },
 })(Slider);
 
-var islandOptions = [];
+var islandOptions1 = [];
+var islandOptions2 = [];
+
 
 class Tutorial extends React.Component {
   constructor(props) {
@@ -139,32 +142,41 @@ class Tutorial extends React.Component {
 
   setup() {
 
-    {
-      ISLANDS.forEach((element) =>
-        islandOptions.push(
+    for (let i = 0; i < ISLANDS.length; i++) {
+      let element = ISLANDS[i];
+      if (i % 2 == 0) {
+        islandOptions1.push(
           <MapOptionBox onClick={() => this.changeChosen(element)}>
             <MapThumbnail src={this.getMap(element)} ></MapThumbnail>
             {<h6>{element}</h6>}
           </MapOptionBox>
         )
-      )
+      } else {
+        islandOptions2.push(
+          <MapOptionBox onClick={() => this.changeChosen(element)}>
+            <MapThumbnail src={this.getMap(element)} ></MapThumbnail>
+            {<h6>{element}</h6>}
+          </MapOptionBox>
+        )
+      }
     }
   }
 
   render() {
     console.log(this.getMap(this.state.map));
     console.log(this.state.epsilon);
-    console.log(islandOptions);
     console.log(document.getElementById(this.getMap(this.state.map)))
-
-    // document.getElementById(this.getMap(this.state.map)).setAttribute('style', 'border: 2px solid red;');
 
     return (
       <TutorialBox>
         <Row>
           <Column>
             <h3>Map Choices</h3>
-            {islandOptions}
+            <Row >
+              <Column>{islandOptions1}</Column>
+              <Column>{islandOptions2}</Column>
+            </Row>
+            
           </Column>
           <Column>
             <h3>Coastline and Epsilon Graph of {this.state.map}</h3>
