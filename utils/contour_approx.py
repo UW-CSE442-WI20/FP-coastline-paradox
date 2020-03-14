@@ -46,11 +46,12 @@ def main(args):
             cv2.imwrite(file_path, result_img)
         print("done generating files")
     else:
+        result_img, result_target_len, result_approx_len = generate_approx(img.copy(), contours, EPSILON)
         print("Approximating using epsilon =", str(EPSILON))
         print("\napproximation length ", result_approx_len)
         print("target length ", result_target_len)
 
-        result_img, result_target_len, result_approx_len = generate_approx(img.copy(), contours, EPSILON)
+        #result_img, result_target_len, result_approx_len = generate_approx(img.copy(), contours, EPSILON)
         cv2.imshow("contour on img", result_img)
 
         print("\npress Q at any time to quit", result_target_len)
