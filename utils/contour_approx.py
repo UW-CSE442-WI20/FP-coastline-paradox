@@ -71,7 +71,7 @@ def generate_approx(img, contours, EPSILON):
         approxCurve = cv2.approxPolyDP(targetCurve, EPSILON, True)
         targetArclen = cv2.arcLength(targetCurve, True)
         approxArclen = cv2.arcLength(approxCurve, True)
-        
+
         # color crap
         cdiff = (255 * i / len(contours))
         r = cdiff

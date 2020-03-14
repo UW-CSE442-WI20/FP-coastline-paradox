@@ -15,6 +15,11 @@
   },
   "dependencies": {
     "d3": "^5.15.0",
+<<<<<<< Updated upstream
     "react-scrollmagic": "^2.1.1"
+=======
+    "jimp": "^0.9.3",
+    "scrollmagic": "^2.0.7"
+>>>>>>> Stashed changes
   }
 }

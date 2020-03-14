@@ -5,7 +5,7 @@ import { withStyles, makeStyles } from '@material-ui/core/styles';
 
 import styled from "styled-components";
 
-const ISLANDS = ["Britain", "Japan", "Hawaii", "Long Island"];
+const ISLANDS = ["Britain", "Hawaii"];
 
 const TutorialBox = styled.div`
   background-color: white;
@@ -176,7 +176,7 @@ class Tutorial extends React.Component {
               <Column>{islandOptions1}</Column>
               <Column>{islandOptions2}</Column>
             </Row>
-            
+
           </Column>
           <Column>
             <h3>Coastline and Epsilon Graph of {this.state.map}</h3>
