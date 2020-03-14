@@ -38,25 +38,26 @@ const Column = styled.div`
 
 
 class ExplanationBox extends React.Component {
-    render() {
-        return (
-            <Row>
-                <Column>
-                    <ContentBox>
-                        <h2>{this.props.content}</h2>
-                    </ContentBox>
-                </Column>
-                <Column>
-                    {this.props.image && 
-                        <ImageBox>
-                            <InsideImage><img src={this.props.image} width={IMAGE_WIDTH_PERCENTAGE}></img></InsideImage>
-                            <h5>Epsilon (ε) = {this.props.epsilon}</h5>
-                        </ImageBox>
-                    }                    
-                </Column>
-            </Row>
-        );
-    }
+  render() {
+    return (
+      <Row>
+        <Column>
+          <ContentBox>
+            <h2>{this.props.content}</h2>
+          </ContentBox>
+        </Column>
+        <Column>
+          {this.props.image &&
+            <ImageBox>
+              <InsideImage><img src={this.props.image} width={IMAGE_WIDTH_PERCENTAGE}></img></InsideImage>
+              <h5>Epsilon (ε) = {this.props.epsilon}</h5>
+              <h5> Approximate length = {this.props.length} miles</h5>
+            </ImageBox>
+          }
+        </Column>
+      </Row>
+    );
+  }
 }
 
 export default ExplanationBox;
