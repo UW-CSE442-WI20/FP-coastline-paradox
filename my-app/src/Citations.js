@@ -15,6 +15,7 @@ class Citations extends React.Component {
                 <h4>Citations:</h4>
                 <ul>
                     <li>Wave Photo: <code>https://giphy.com/stickers/fun-summer-beach-Mb9GGpjLPorX0qHSF7</code></li>
+                    
                 </ul>
            </CitationBox>
         );

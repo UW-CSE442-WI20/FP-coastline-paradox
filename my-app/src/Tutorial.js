@@ -11,9 +11,21 @@ const TutorialBox = styled.div`
   padding: 1em;
   border: 2px dashed black;
   text-align: center;
-
-  height: 50em;
   
+  height: 60em;
+  
+`
+const MapThumbnail = styled.img`
+  // width: 5em;
+  // height: 5em;
+  width: 25%;
+  padding-top: 2em;
+`
+
+
+const MapOptionBox = styled.div`
+  border: 2px solid black;
+  margin: 3em;  
 `
 
 const Row = styled.div`
@@ -22,41 +34,58 @@ const Row = styled.div`
 
 const Column = styled.div`
   flex: 50%;
-  
 `
 
 var islandOptions = [];
 
 class Tutorial extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = { map: "Cuba" };
+    this.setup();
+  }
+
   getMap(name) {
-    return name.replace(" ", "_").toLowerCase() + ".png";
+    return "./maps/" + name.replace(" ", "_").toLowerCase() + ".png";
+  }
+
+  changeChosen(name) {
+    this.setState({ map: name });
   }
 
   setup() {
+    
     {ISLANDS.forEach((element) =>
       islandOptions.push(
-      <div>
-        <img src={"./maps/" + this.getMap(element)} width="10%"></img>
+      <MapOptionBox onClick={() => this.changeChosen(element)}>
+        <MapThumbnail src={this.getMap(element)} ></MapThumbnail>
         {<h6>{element}</h6>}
-      </div>
+      </MapOptionBox>
       )
     )}
   }
 
   render() {
-    this.setup();
+    console.log(this.getMap(this.state.map));
+    console.log(islandOptions);
+    console.log(document.getElementById(this.getMap(this.state.map)))
+    
+    // document.getElementById(this.getMap(this.state.map)).setAttribute('style', 'border: 2px solid red;');
+    
     return (
       <TutorialBox>
-        {islandOptions}
-
-        
-
         <Row>
           <Column>
-            GRAPH 
+            <h3>Map Choices</h3>
+            {islandOptions} 
           </Column>
           <Column>
-            MAP
+            <h3>Coastline and Epsilon Graph of {this.state.map}</h3>
+            GRAPH HERE
+          </Column>
+          <Column>
+            <h3>Map of {this.state.map}</h3>
+            <img src={this.getMap(this.state.map)} width="100%"></img>
           </Column>
         </Row>
       </TutorialBox>
