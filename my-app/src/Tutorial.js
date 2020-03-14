@@ -165,7 +165,7 @@ class Tutorial extends React.Component {
   render() {
     console.log(this.getMap(this.state.map));
     console.log(this.state.epsilon);
-    console.log(document.getElementById(this.getMap(this.state.map)))
+    console.log(document.getElementById(this.getMap(this.state.map)));
 
     return (
       <TutorialBox>
@@ -180,7 +180,7 @@ class Tutorial extends React.Component {
           </Column>
           <Column>
             <h3>Coastline and Epsilon Graph of {this.state.map}</h3>
-            <h4>Epsilon (e) = </h4>
+            <h4>Epsilon (e) = {this.state.epsilon} </h4>
             <IOSSlider
               orientation="horizontal"
               aria-label="ios-slider"
@@ -193,7 +193,7 @@ class Tutorial extends React.Component {
               valueLabelDisplay="on"
             />
             <h3> Map of {this.state.map} </h3>
-            <img src={this.getMapEpsilon(this.state.map, this.state.epsilon)} width="80%" />
+            <img id="demo" src={this.getMapEpsilon(this.state.map, this.state.epsilon)} width="80%" />
           </Column>
           {/* <Column>
             <h3>Map of {this.state.map}</h3>
