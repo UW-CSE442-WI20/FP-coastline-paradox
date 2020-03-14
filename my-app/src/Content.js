@@ -6,6 +6,7 @@ import ExplanationBox from './ExplanationBox.js';
 
 const ImageBox = styled.div`
     display: flex;
+    
     justify-content: center;
 `
 const p1        = "It’s easy to measure the length of a straight line, but due to the fractal-like properties of coastlines, the length of a coastline depends on the method and scale of measurement used. As the unit of measurement decreases in scale, the length of a coastline increases towards infinity. This counterintuitive observation is called the coastline problem/paradox."

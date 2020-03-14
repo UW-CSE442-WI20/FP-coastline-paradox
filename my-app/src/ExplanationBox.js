@@ -8,8 +8,6 @@ const ContentBox = styled.div`
     font-weight: bold;
     margin-left: 5em;
     margin-right: 5em;
-    margin-bottom: 10em;
-    margin-bottom: 15em;
     padding: 1em;
     border: 2px dashed black;
     background-color: white;
@@ -30,7 +28,8 @@ const InsideImage = styled.div`
 
 const Row = styled.div`
     display: flex;  
-    margin-top: 10em;
+    margin-top: 15em;
+    margin-bottom: 10em;
 `
 
 const Column = styled.div`
