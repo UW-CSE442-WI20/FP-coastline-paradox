@@ -67,7 +67,7 @@ const marks = [
 
 const IOSSlider = withStyles({
   root: {
-    color: '#3880ff',
+    color: '#62dfd5',
     height: 2,
   },
   thumb: {
@@ -88,7 +88,7 @@ const IOSSlider = withStyles({
   active: {},
   valueLabel: {
     left: 'calc(-50% + 11px)',
-    top: 52,
+    top: 40,
     '& *': {
       background: 'transparent',
       color: '#000',
@@ -168,13 +168,15 @@ class Tutorial extends React.Component {
               defaultValue={50}
               step={5}
               valueLabelDisplay="on" />
+            <h3> Map of {this.state.map} </h3>
+            <img src={this.getMap(this.state.map)} width="80%" />
           </Column>
-          <Column>
+          {/* <Column>
             <h3>Map of {this.state.map}</h3>
             <img src={this.getMap(this.state.map)} width="75%"></img>
-          </Column>
+          </Column> */}
         </Row>
-      </TutorialBox>
+      </TutorialBox >
     );
   }
 }
