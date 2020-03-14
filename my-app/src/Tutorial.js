@@ -1,13 +1,11 @@
 import React from 'react';
 import './index.css';
 import { Slider } from '@material-ui/core';
-import Typography from '@material-ui/core/Typography';
-import Tooltip from '@material-ui/core/Tooltip';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 
 import styled from "styled-components";
 
-const ISLANDS = ["Cuba", "Japan", "Hawaii", "Long Island"];
+const ISLANDS = ["Britain", "Japan", "Hawaii", "Long Island"];
 
 const TutorialBox = styled.div`
   background-color: white;
@@ -119,12 +117,20 @@ var islandOptions = [];
 class Tutorial extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { map: "Cuba" };
+    this.state = { map: "Britain", epsilon: "990" };
     this.setup();
   }
 
   getMap(name) {
     return "./maps/" + name.replace(" ", "_").toLowerCase() + ".png";
+  }
+
+  getMapEpsilon(name, epsilon) {
+    return "./maps/" + name.replace(" ", "_").toLowerCase() + "_steps/" + "epsilon_" + epsilon + ".png";
+  }
+
+  handleChange = (event, epsilon) => {
+    this.setState({ epsilon: epsilon });
   }
 
   changeChosen(name) {
@@ -147,6 +153,7 @@ class Tutorial extends React.Component {
 
   render() {
     console.log(this.getMap(this.state.map));
+    console.log(this.state.epsilon);
     console.log(islandOptions);
     console.log(document.getElementById(this.getMap(this.state.map)))
 
@@ -161,15 +168,20 @@ class Tutorial extends React.Component {
           </Column>
           <Column>
             <h3>Coastline and Epsilon Graph of {this.state.map}</h3>
-            Epsilon (e) =
+            <h4>Epsilon (e) = </h4>
             <IOSSlider
               orientation="horizontal"
               aria-label="ios-slider"
-              defaultValue={50}
-              step={5}
-              valueLabelDisplay="on" />
+              defaultValue={990}
+              min={0}
+              max={990}
+              step={15}
+              value={this.state.epsilon}
+              onChange={this.handleChange}
+              valueLabelDisplay="on"
+            />
             <h3> Map of {this.state.map} </h3>
-            <img src={this.getMap(this.state.map)} width="80%" />
+            <img src={this.getMapEpsilon(this.state.map, this.state.epsilon)} width="80%" />
           </Column>
           {/* <Column>
             <h3>Map of {this.state.map}</h3>
