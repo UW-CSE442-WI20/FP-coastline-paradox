@@ -14,7 +14,7 @@ const p2 = "Let’s measure the coastline of Great Britain with an epsilon value
 const p3 = "Now, let’s measure the coastline of Great Britain with an epsilon value of 50. With an epsilon value of 50, we find the length of Great Britain’s coastline to be approximately 10,332 miles, which is 144% longer than what we found using an epsilon value of 100. By using this second smallest epsilon value, we saw an increase of 3,197 miles in measured length over the first measurement."
 const p4 = "Finally, let’s measure the coastline of Great Britain with an epsilon value of 25, our smallest granularity in this example. With an epsilon value of 25, we find that the length of Great Britain’s coastline is approximately 13,218 miles, which is 127% longer than our previously recorded value. With the smallest epsilon value, we saw an increase of 2,885 miles over the second measurement, and an increase of 6,082 miles over the first measurement."
 const p5 = "Now, let's use an epsilon value of 0. As you can see, with the smallest epsilon value, we are able to cover the nooks and crannies of the coastline. This epsilon value gives us an approximation of 19,470 miles as the length of the coastline."
-const p6 = "When considering all three figures, we see that the approximated length of the coastline increases as we degrease the length of the measuring scale. This is the coastline paradox!"
+const p6 = "When considering all figures, we see that the approximated length of the coastline increases as we degrease the length of the measuring scale. This is the coastline paradox!"
 
 function Content() {
   return (
